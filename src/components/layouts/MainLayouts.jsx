@@ -12,7 +12,9 @@ const MainLayouts = () => {
     <div>
         <Nav />
      </div>
+      <div className='min-h-[calc(100vh-150px)]'>
       <Outlet />
+      </div>
       <div>
         <Footer />
       </div>
