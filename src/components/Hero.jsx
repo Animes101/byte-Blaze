@@ -6,8 +6,8 @@ const Hero = () => {
     <div className="hero min-h-full">
     <div className="hero-content text-center">
         <div className="max-w-md">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300%">Hello there</h1>
-        <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-orange-700 via-blue-500 to-green-400 text-transparent bg-clip-text animate-gradient bg-300%">Welcome to ByteBlaze</h1>
+        <p className="py-6">ByteBlaze is the bridge between the complex world of technology and the curious minds eager to understand i</p>
         {/* {button} */}
         <div className='flex flex-col md:flex-row gap-4 justify-center'>
             <button><Link to="/blogs" class="px-10 py-4 text-xl font-semibold text-center text-white transition duration-300 rounded-lg hover:from-purple-600 hover:to-pink-600 ease bg-gradient-to-br from-purple-500 to-pink-500 md:w-auto">

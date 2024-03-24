@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { deleteBlog, localStorageGetItems } from "../utils/bookMarkItems";
 
 import Blog from "../components/Blog";
+import EmptString from "../components/EmptString";
 
 const BookMarks = () => {
   const [blog, setBlog] = useState([]);
@@ -17,6 +18,14 @@ const BookMarks = () => {
     const blogs = localStorageGetItems();
     setBlog(blogs);
 
+  }
+
+  if(blog.length<1){
+    return (
+      <div className="min-h-[calc(100vh-150px)]">
+        <EmptString />
+      </div>
+    )
   }
 
   return (
