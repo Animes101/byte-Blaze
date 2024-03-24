@@ -1,31 +1,33 @@
-import React, { useEffect, useState } from 'react'
-import { localStorageGetItems } from '../utils/bookMarkItems';
+import React, { useEffect, useState } from "react";
+import { deleteBlog, localStorageGetItems } from "../utils/bookMarkItems";
 
+import Blog from "../components/Blog";
 
 const BookMarks = () => {
-  const [blog ,setBlog]=useState([]);
+  const [blog, setBlog] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
+    const blogs = localStorageGetItems();
+    setBlog(blogs);
+  }, []);
 
-    const blogs=localStorageGetItems();
+  const handleDeleteLocalStorage=(id)=>{
+
+    deleteBlog(id);
+    const blogs = localStorageGetItems();
     setBlog(blogs);
 
-  },[])
-
-console.log(blog);
-
+  }
 
   return (
     <div>
-      {blog.map((item)=>{
-        return(
-          <div>
-            <h1>{item.title}</h1>
-          </div>
-        )
-      })}
+      <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 px-2">
+        {blog.map((blog, index) => (
+          <Blog onDelete={handleDeleteLocalStorage} delet={true} key={index} blog={blog} />
+        ))}
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default BookMarks
+export default BookMarks;

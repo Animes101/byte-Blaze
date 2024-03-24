@@ -29,7 +29,7 @@ import Content from "../components/Content";
           loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}}`),
           children:[
             {
-                path:'author',
+                index:true,
                 element:<Author />,
                 loader:({params})=>fetch(`https://dev.to/api/articles/${params.id}}`)
             },

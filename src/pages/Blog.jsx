@@ -3,6 +3,7 @@ import { Link, Outlet, useLoaderData} from 'react-router-dom';
 import { CiBookmarkPlus } from "react-icons/ci";
 import { saveBlog } from '../utils/bookMarkItems';
 
+
 const Blog = () => {
     const [tabsItem ,setTabsItem]=useState(0);
     const blog=useLoaderData();
@@ -11,6 +12,7 @@ const Blog = () => {
     const handleBookmarks=(blog)=>{
 
         saveBlog(blog);
+
 
     }
 
