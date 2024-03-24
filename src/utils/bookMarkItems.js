@@ -2,8 +2,8 @@
 import toast from 'react-hot-toast';
 
 export const localStorageGetItems=()=>{
-    const bookmarkItems=[];
-    const getItemsBookmark=localStorage.getItem('bookMarkItems');
+    let bookmarkItems=[];
+    let getItemsBookmark=localStorage.getItem('blogs');
     if(getItemsBookmark){
         bookmarkItems=JSON.parse(getItemsBookmark);
     }
@@ -12,8 +12,11 @@ export const localStorageGetItems=()=>{
 }
 
 export const saveBlog = blog => {
+
     let blogs = localStorageGetItems()
-    const isExist = blogs.find(b => b.id === blog.id)
+
+    const isExist = blogs.find(b => b.id == blog.id);
+
     if (isExist) {
       return toast.error('Already Bookmarked!')
     }
