@@ -7,7 +7,7 @@ export const localStorageGetItems=()=>{
     if(getItemsBookmark){
         bookmarkItems=JSON.parse(getItemsBookmark);
     }
-    return [];
+    return bookmarkItems;
 
 }
 

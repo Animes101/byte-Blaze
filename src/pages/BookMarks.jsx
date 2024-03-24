@@ -7,15 +7,23 @@ const BookMarks = () => {
 
   useEffect(()=>{
 
-    const blog=localStorageGetItems();
-    setBlog([...blog,blog]);
+    const blogs=localStorageGetItems();
+    setBlog(blogs);
 
   },[])
 
-  console.log(blog);
+console.log(blog);
+
+
   return (
     <div>
-      Book marks
+      {blog.map((item)=>{
+        return(
+          <div>
+            <h1>{item.title}</h1>
+          </div>
+        )
+      })}
     </div>
   )
 }
