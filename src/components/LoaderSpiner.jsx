@@ -3,7 +3,7 @@ import CircleLoader from "react-spinners/ClipLoader";
 
 const LoaderSpiner = () => {
   return (
-    <div className='flex flex-col items-center justify-center'>
+    <div className='flex flex-col items-center justify-center h-screen'>
 
         <CircleLoader color="#36d7b7" />
       

@@ -1,10 +1,16 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { useLoaderData, useNavigation ,} from 'react-router-dom'
 import Blog from '../components/Blog';
+import LoaderSpiner from '../components/LoaderSpiner';
 
 
 const Blogs = () => {
+  const navigate=useNavigation();
   const blogs=useLoaderData();
+
+if(navigate.state === 'loading'){
+    return <LoaderSpiner />
+}
   return (
   
       <section className="">

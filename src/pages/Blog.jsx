@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
-import { Link, Outlet, useLoaderData } from 'react-router-dom';
+import { Link, Outlet, useLoaderData} from 'react-router-dom';
+import { CiBookmarkPlus } from "react-icons/ci";
+import { saveBlog } from '../utils/bookMarkItems';
 
 const Blog = () => {
     const [tabsItem ,setTabsItem]=useState(0);
     const blog=useLoaderData();
     const {type_of,published_timestamp,title,url}=blog;
 
-    console.log(blog);
+    const handleBookmarks=(blog)=>{
+
+        saveBlog(blog);
+
+    }
+
   return (
             <article className="max-w-2xl px-6 py-24 mx-auto space-y-12 bg-gray-800 text-gray-50">
             <div className="w-full mx-auto space-y-4 text-center">
@@ -34,6 +41,10 @@ const Blog = () => {
                     </svg>
                     <span>Corrupti</span>
                 </Link>
+                {/* {bookmarksIcon} */}
+                <div className='cursor-pointer' onClick={()=>handleBookmarks(blog)}>
+                <CiBookmarkPlus className='text-4xl ml-4 '/>
+                </div>
             </div>
             <Outlet />
         </article>
